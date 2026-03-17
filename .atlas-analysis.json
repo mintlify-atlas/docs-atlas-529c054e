@@ -1,0 +1,83 @@
+{
+  "projectType": "cli-tool",
+  "projectName": "splat",
+  "projectDescription": "A CLI tool that runs your Python program, captures compile and runtime errors, and uses Groq AI to deliver a highly contextual, actionable debug response.",
+  "theme": "palm",
+  "primaryColor": "#f43c04",
+  "lightColor": "#fc9c7a",
+  "darkColor": "#f3f0e9",
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "installation"
+            ]
+          },
+          {
+            "group": "Command Reference",
+            "pages": [
+              "commands/overview",
+              "commands/squash"
+            ]
+          },
+          {
+            "group": "Configuration",
+            "pages": [
+              "configuration/environment",
+              "configuration/flags"
+            ]
+          },
+          {
+            "group": "How It Works",
+            "pages": [
+              "concepts/pipeline",
+              "concepts/relational-analysis",
+              "concepts/groq-ai"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/python-projects",
+              "guides/fastapi-projects"
+            ]
+          },
+          {
+            "group": "Troubleshooting",
+            "pages": [
+              "troubleshooting/known-issues",
+              "troubleshooting/faq"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "AI-powered debug responses using Groq (llama3-70b-8192)",
+    "Relational file analysis with -r flag for Nth-degree import traversal",
+    "Git-aware context gathering (respects .gitignore)",
+    "Interactive terminal output with prompt_toolkit",
+    "Automatic error fix suggestions applied directly to source files",
+    "Framework detection for Python, FastAPI, Node.js, and more",
+    "File writer agent for automated code corrections"
+  ],
+  "publicApiSurface": [
+    "splat squash <entrypoint>",
+    "splat squash -r <entrypoint>",
+    "relational_error_parsing_function(entrypoint, flag)",
+    "process(traceback_message, original_error_information, context)",
+    "parse_error_stack(error_info)",
+    "build_adjacency_list(files, project_root)",
+    "get_nth_related_files(start_files, graph)",
+    "run_mock_repopack(paths)",
+    "splat_find(command)",
+    "terminalstep1(json_object)"
+  ]
+}
